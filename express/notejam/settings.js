@@ -1,7 +1,7 @@
 var settings = {
   development: {
-    db: "notejam_dev.db",
-    dsn: "sqlite://mnt/efs/fs1/notejam_dev.db"
+    db: "/mnt/efs/fs1/notejam_dev.db",
+    dsn: "sqlite://notejam_dev.db"
   },
   test: {
     db: "notejam_test.db",
