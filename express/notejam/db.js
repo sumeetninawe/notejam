@@ -9,7 +9,8 @@ var functions = {
     async.series({
       mountdb: function(){
         console.log('Attaching!!!');
-        db.run("ATTACH '/mnt/efs/fs1/notejam_dev.db' AS 'notejam_dev.db';");
+        db.run("ATTACH '/mnt/efs/fs1/notejam_dev.db' AS 'notejam_dev.db';", [],
+            function() { callback(null); });
       },
       createUsers: function(callback) {
         db.run("CREATE TABLE IF NOT EXISTS users (" +
