@@ -7,12 +7,13 @@ var db = new sqlite3.Database(settings.db);
 var functions = {
   createTables: function(next) {
     async.series({
-      mountdb: function(){
+      mountdb: function(callback){
         console.log('Attaching!!!');
         db.run("ATTACH '/mnt/efs/fs1/notejam_dev.db' AS 'notejam_dev.db';", [],
             function() { callback(null); });
       },
       createUsers: function(callback) {
+        console.log('create users');
         db.run("CREATE TABLE IF NOT EXISTS users (" +
             "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
             "email VARCHAR(75) NOT NULL," +
