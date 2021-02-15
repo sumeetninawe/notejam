@@ -4,8 +4,8 @@ var async = require('async');
 var settings = require('./settings');
 var db = mysql.createConnection({
   host     : 'notejamdb2.cak73srtsjdz.eu-central-1.rds.amazonaws.com',
-  user     : 'admin',
-  password : 'adminadmin',
+  user     : '***',
+  password : '***',
   database : 'notejamdb',
   port     : 3306
 });
